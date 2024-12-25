@@ -1,18 +1,22 @@
 <template>
-
-
+  <header>
+    <div class="container">
+      <img src="@/assets/pinia-logo.svg" alt="Pinia" title="Pinia">
+      <h1 class="header-title">My Personal Journal</h1>
+    </div>
+  </header>
 </template>
 
-
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
   data() {
-    return {
-      
-    }
-  }
 
-}
+
+    return {}
+  }
+})
 </script>
+
+<style scoped></style>
