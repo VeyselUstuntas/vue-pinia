@@ -1,9 +1,34 @@
 {
-    "diary": [
-      {"id": 1, "diary": "bugün hava bulutlu...", "date": "11.06.2023", "isFav": false},
-      {"id": 2, "diary": "bugün pinia uygulamasına başladık", "date": "10.06.2023", "isFav": false},
-      {"id": 3, "diary": "sağlık bir gün oldu", "date": "09.06.2023", "isFav": false},
-      {"id": 4, "diary": "bugün epey güldüm...", "date": "08.06.2023", "isFav": true}
-    ]
-  }
-  
+  "diary": [
+    {
+      "id": "1",
+      "journal": "bugün hava bulutlu...",
+      "date": "11.06.2023",
+      "isFav": false
+    },
+    {
+      "id": "2",
+      "journal": "bugün pinia uygulamasına başladık",
+      "date": "10.06.2023",
+      "isFav": false
+    },
+    {
+      "id": "3",
+      "journal": "sağlık bir gün oldu",
+      "date": "09.06.2023",
+      "isFav": false
+    },
+    {
+      "id": "4",
+      "journal": "bugün epey güldüm...",
+      "date": "08.06.2023",
+      "isFav": true
+    },
+    {
+      "id": "5",
+      "journal": "muffy\n",
+      "date": "25.12.2024",
+      "isFav": false
+    }
+  ]
+}

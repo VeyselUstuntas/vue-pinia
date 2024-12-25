@@ -50,6 +50,7 @@ export default defineComponent({
   setup() {
     const journalStore = useJournalStore();
     const filter = ref("all");
+    journalStore.getJournal();
     return { journalStore, filter };
   }
 

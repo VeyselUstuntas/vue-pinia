@@ -26,10 +26,10 @@ export default defineComponent({
         function saveDiary() {
             if (newjournalContent.value.length > 0) {
                 journalStore.newJournal({
-                    id: journalStore.journalLength + 1,
+                    id: ((Number)(journalStore.journalLength) + 1).toString(),
                     journal: newjournalContent.value,
                     date: currentDate().toString(),
-                    isFav: true
+                    isFav: false
                 })
             }
         }

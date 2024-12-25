@@ -1,7 +1,7 @@
 import { defineStore, type StoreDefinition } from "pinia";
 
 export interface Journal {
-    id: number;
+    id: string;
     journal: string;
     date: string;
     isFav: boolean;
@@ -9,14 +9,13 @@ export interface Journal {
 
 export interface JournalState {
     journal: Journal[];
+    loading: boolean;
 }
 
 export const useJournalStore = defineStore("journalStore", {
     state: (): JournalState => ({
-        journal: [
-            { id: 1, journal: "Bugün Hava Bulutlu", date: "25.12.2024", isFav: false },
-            { id: 2, journal: "Bugün Pinia Uygulamasına Başladık", date: "26.12.2024", isFav: true },
-        ],
+        journal: [],
+        loading: false
     }),
     getters: {
         favs(): Journal[] {
@@ -34,17 +33,42 @@ export const useJournalStore = defineStore("journalStore", {
     },
 
     actions: {
-        newJournal(journal: Journal) {
-            this.journal.push(journal);
+        async getJournal() {
+            this.loading = true;
+            const res = await fetch("http://localhost:3000/diary");
+            const data: Journal[] = await res.json();
+            this.journal = data;
+            this.loading = false;
         },
-        toggleFav(id: number) {
+
+        async newJournal(journal: Journal) {
+            const res = await fetch("http://localhost:3000/diary",{
+                method:"POST",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify(journal)
+            }).catch((err) => console.log(err));
+            this.journal.push(journal);
+
+        },
+
+        async toggleFav(id: string) {
             const diary = this.journal.find(j => j.id === id);
             diary!.isFav = !diary!.isFav;
+
+            const res = await fetch("http://localhost:3000/diary/" + id,{
+                method:"PATCH",
+                headers:{"Content-Type":"application/json"},
+                body:JSON.stringify({isFav:diary!.isFav})
+            }).catch((err) => console.log(err));
+             
         },
-        deleteJournal(id:number){
+        async deleteJournal(id: string) {
             const diary = this.journal.find(j => j.id === id);
             this.journal = Array.from(this.journal.filter(j => j.id !== diary?.id));
 
+            const res = await fetch("http://localhost:3000/diary/" + id,{
+                method:"DELETE",
+            })
         }
     }
 });
