@@ -155,3 +155,18 @@ main i {
 .new-diary button {
     cursor: pointer;
 }
+
+
+/* reset-data */
+
+.reset-data button{
+    background-color: #ffd356;
+    width: 10rem;
+    padding: 1rem;
+    margin: 2rem;
+    font-size: 1.2rem;
+}
+
+.reset-data{
+    text-align: center;
+}
