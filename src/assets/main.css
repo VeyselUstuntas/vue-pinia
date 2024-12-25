@@ -76,3 +76,32 @@ main i{
     color:#bbb;
 }
 
+
+/* filter buttons */
+
+.data-area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.data-area button{
+    background-color: #bbb;
+    color: #333;
+    font-size: 1.2rem;
+    padding: .6rem;
+    margin: .7rem .7rem .4rem 0;
+    border: .1rem solid #fff;
+    border-radius: .6rem;
+    width: 13rem;
+}
+
+.data-area button:hover{
+    cursor: pointer;    
+}
+
+.data-area p{
+    font-size: 1.2rem;
+    align-self: center;
+    padding-top: .3rem;
+}
