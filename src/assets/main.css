@@ -5,7 +5,7 @@
 }
 
 html{
-    font-size: 10px;
+    font-size: 14px;
     font-family: "Roboto", sans-serif;
     background-color: #f2f2f2;
 }
@@ -34,5 +34,45 @@ header .container img{
 
 header .header-title{
     font-size: 3rem;
+}
+
+
+/* box */
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+main .container{
+    max-width: 70rem;
+    width: 100%;
+
+}
+
+main p{
+    text-align: left;
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+}
+
+main .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    margin-top: 2rem;
+    border: .1rem solid #e2e2e2;
+    text-align: left;
+    padding: 1.5rem;
+    box-shadow: .2rem .2rem .4rem #ccc;
+}
+
+main small{
+    color: #bbb;
+}
+
+main i{
+    color:#bbb;
 }
 
